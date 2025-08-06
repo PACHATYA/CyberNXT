@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome to CyberNXT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background: #0e153a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      margin-top: 120px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00d9ff;
+      margin-bottom: 20px;
+    }
+    .btn {
+      margin: 10px;
+      min-width: 250px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="welcomeText">Welcome Back!</h1>
+    <p class="lead">Choose an area to explore:</p>
+    <a href="module.html" class="btn btn-outline-info btn-lg">Getting Started with the Module</a><br />
+    <a href="practice.html" class="btn btn-outline-info btn-lg">Hands-On Practice</a><br />
+    <a href="crypto.html" class="btn btn-outline-info btn-lg">Cryptography</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const srmId = params.get('srmid');
+    if (srmId) {
+      document.getElementById('welcomeText').textContent = `Welcome Back, ${srmId.toUpperCase()}!`;
+    }
+  </script>
+</body>
+</html>
